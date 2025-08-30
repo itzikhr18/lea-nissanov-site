@@ -163,7 +163,26 @@
       .footer-main{flex-direction:column;gap:20px;align-items:center;text-align:center}
       .footer-links{flex-wrap:wrap;justify-content:center}
       .footer-right{flex-direction:column;gap:15px}
-      .footer-contact{flex-direction:column;gap:10px}
+   
+          @media (max-width: 480px) {
+      /* Adjust hero section and buttons */
+      .hero h2 { font-size: 28px; }
+      .hero p { font-size: 16px; }
+      .cta-button { padding: 12px 25px; font-size: 16px; }
+      /* Force info and service cards into a single column */
+      .info-grid,
+      .services-grid { grid-template-columns: 1fr; }
+      /* Reduce padding on calculators and contact sections */
+      .calculator,
+      .contact-info,
+      .contact-form { padding: 20px; }
+      /* Tweak navigation and footer for small screens */
+      nav ul { flex-wrap: wrap; gap: 6px; font-size: 13px; }
+      .footer-main { flex-direction: column; gap: 15px; text-align: center; }
+      /* Prevent horizontal scrolling */
+      body { overflow-x: hidden; }
+    }
+.footer-contact{flex-direction:column;gap:10px}
     }
   </style>
 </head>
