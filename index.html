@@ -96,8 +96,34 @@
     .form-status{margin-top:12px;padding:12px;border-radius:8px;text-align:center}
     .form-status.success{background:var(--success);color:white}
     .form-status.error{background:var(--urgent);color:white}
-    .banks-logos{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin:20px 0;opacity:0.7}
-    .bank-logo{width:60px;height:30px;background:#ddd;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#666}
+.banks-logos{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin:20px 0;
+  /* show the logos in full color */
+  opacity:1;
+}
+.bank-logo{
+  /* use the same dimensions but remove the grey background since we now show actual logos */
+  width:60px;
+  height:30px;
+  border-radius:6px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  /* remove default text styling */
+  font-size:0;
+  background:transparent;
+}
+
+/* ensure any logo image inside the bank-logo container scales to fit without distortion */
+.bank-logo img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+}
     #sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:1000;display:none;gap:12px;padding:12px;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-top:2px solid var(--gold);box-shadow:0 -6px 14px rgba(0,0,0,.1)}
     @media (max-width:768px){#sticky-cta{display:flex}body{padding-bottom:80px}.hero h1{font-size:32px}.hero-proof{gap:20px}.calc-grid{grid-template-columns:1fr!important}}
     .whatsapp{position:fixed;bottom:100px;right:20px;z-index:999;background:#25d366;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 12px rgba(0,0,0,.15);animation:bounce 2s infinite}
@@ -294,10 +320,12 @@
           <img src="leah-meeting.jpg" alt="פגישת עבודה" style="width:100%;max-height:400px;object-fit:cover;border-radius:var(--radius);margin-bottom:20px;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
         </div>
         <div class="banks-logos">
-          <div class="bank-logo">בנק הפועלים</div>
-          <div class="bank-logo">בנק לאומי</div>
-          <div class="bank-logo">מזרחי טפחות</div>
-          <div class="bank-logo">בנק דיסקונט</div>
+          <!-- Replaced plain bank names with their respective logos. Each logo is contained
+               in a flexible box so it scales nicely across desktop and mobile views. -->
+          <div class="bank-logo"><img src="logo-hapoalim.png" alt="בנק הפועלים"></div>
+          <div class="bank-logo"><img src="logo-leumi.png" alt="בנק לאומי"></div>
+          <div class="bank-logo"><img src="logo-mizrahi.png" alt="מזרחי טפחות"></div>
+          <div class="bank-logo"><img src="logo-discount.png" alt="בנק דיסקונט"></div>
         </div>
         <div class="grid">
           <div class="card">
